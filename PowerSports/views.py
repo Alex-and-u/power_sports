@@ -9,3 +9,9 @@ def power_sports(request):
     html_template = loader.get_template('index.html')
     context = {}
     return HttpResponse(html_template.render(context, request))
+
+
+def about(request):
+    html_template = loader.get_template('about.html')
+    context = {}
+    return HttpResponse(html_template.render(context, request))
