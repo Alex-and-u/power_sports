@@ -18,5 +18,4 @@ class Field(models.Model):
 
 class Sport(models.Model):
     name = models.CharField(max_length=50, null=False)
-    surname = models.CharField(max_length=50, null=False)
     sport_id = models.IntegerField(primary_key=True, null=False)
