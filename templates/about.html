@@ -1,4 +1,4 @@
-{% extends base.html %}
+{% extends "base.html" %}
 {% block content %}
    <body class="game_info" data-spy="scroll" data-target=".header">
       <!-- LOADER -->
@@ -14,7 +14,7 @@
                      <div class="col-md-6">
                         <div class="full">
                            <div class="logo">
-                              <a href="index.html"><img src="/static/assets/images/logo.png" alt="#" /></a>
+                              <a href={{ "home" }}><img src="/static/assets/images/logo.png" alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -22,10 +22,10 @@
                         <div class="right_top_section">
                            <!-- social icon -->
                            <ul class="social-icons pull-left">
-                              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                              <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                              <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                              <li><a class="facebook" href="/static/assets/#"><i class="fa fa-facebook"></i></a></li>
+                              <li><a class="twitter" href="/static/assets/#"><i class="fa fa-twitter"></i></a></li>
+                              <li><a class="youtube" href="/static/assets/#"><i class="fa fa-youtube-play"></i></a></li>
+                              <li><a class="pinterest" href="/static/assets/#"><i class="fa fa-pinterest-p"></i></a></li>
                            </ul>
                            <!-- end social icon -->
                            <!-- button section -->
@@ -63,11 +63,11 @@
                                     <div class="collapse navbar-collapse js-navbar-collapse">
                                        <ul class="nav navbar-nav">
                                           <li class="active"><a href="index.html">Home</a></li>
-                                          <li><a href="about.html">About</a></li>
-                                          <li><a href="team.html">Team</a></li>
-                                          <li><a href="news.html">News</a></li>
+                                          <li><a href={{ 'about' }}>About</a></li>
+                                          <li><a href={{ 'team' }}>Team</a></li>
+                                          <li><a href={{ 'news' }}>News</a></li>
                                           <li class="dropdown mega-dropdown">
-                                             <a href="match" class="dropdown-toggle" data-toggle="dropdown">Match<span class="caret"></span></a>				
+                                             <a href="match" class="dropdown-toggle" data-toggle="dropdown">Match<span class="caret"></span></a>
                                              <ul class="dropdown-menu mega-dropdown-menu">
                                                 <li class="col-sm-8">
                                                    <ul>
@@ -75,17 +75,17 @@
                                                       <div id="menCollection" class="carousel slide" data-ride="carousel">
                                                          <div class="carousel-inner">
                                                             <div class="item active">
-                                                               <div class="banner-for-match"><a href="#"><img class="img-responsive" src="/static/assets/images/match-banner1.jpg" alt="Image help message" /></a></div>
-                                                            </div>
-                                                            <!-- End Item -->
-                                                            <div class="item">
                                                                <div class="banner-for-match"><a href="#"><img class="img-responsive" src="/static/assets/images/match-banner1.jpg" alt="#" /></a></div>
                                                             </div>
                                                             <!-- End Item -->
                                                             <div class="item">
                                                                <div class="banner-for-match"><a href="#"><img class="img-responsive" src="/static/assets/images/match-banner1.jpg" alt="#" /></a></div>
                                                             </div>
-                                                            <!-- End Item -->                                
+                                                            <!-- End Item -->
+                                                            <div class="item">
+                                                               <div class="banner-for-match"><a href="#"><img class="img-responsive" src="/static/assets/images/match-banner1.jpg" alt="#" /></a></div>
+                                                            </div>
+                                                            <!-- End Item -->
                                                          </div>
                                                          <!-- End Carousel Inner -->
                                                          <!-- Controls -->
@@ -116,8 +116,8 @@
                                                 </li>
                                              </ul>
                                           </li>
-                                          <li><a href="blog.html">Blog</a></li>
-                                          <li><a href="contact.html">contact</a></li>
+                                          <li><a href={{ 'blog' }}>Blog</a></li>
+                                          <li><a href={{ 'contact' }}>contact</a></li>
                                        </ul>
                                     </div>
                                     <!-- /.nav-collapse -->
@@ -262,7 +262,7 @@
                            <li><a href="about.html">About Us</a></li>
                            <li><a href="team.html">Our Team</a></li>
                            <li><a href="news.html">Latest News</a></li>
-                           <li><a href="/matche.html">Recent Matchs</a></li>
+{#                           <li><a href="/matche.html">Recent Matchs</a></li>#}
                            <li><a href="blog.html">Our Blog</a></li>
                            <li><a href="contact.html">Contact Us</a></li>
                         </ul>

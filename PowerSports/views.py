@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def power_sports(request):
+def home(request):
     html_template = loader.get_template('index.html')
     context = {}
     return HttpResponse(html_template.render(context, request))
