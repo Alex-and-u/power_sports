@@ -21,5 +21,5 @@ from PowerSports import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sports/',include('PowerSports.urls')),
+    path('',include('PowerSports.urls')),
 ]
