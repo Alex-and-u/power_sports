@@ -45,3 +45,8 @@ def team(request):
     html_template = loader.get_template('team.html')
     context = {}
     return HttpResponse(html_template.render(context, request))
+
+def register(request):
+    html_template = loader.get_template('register.html')
+    context = {}
+    return HttpResponseRedirect(html_template.render(context, request))
