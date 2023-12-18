@@ -2,7 +2,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.template import loader
 from django.shortcuts import render
-
+from .models import Player
+from .models import Field
+from .models import Sport
 # Create your views here.
 
 def home(request):
