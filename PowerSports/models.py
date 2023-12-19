@@ -7,8 +7,7 @@ class Player(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name + " " + self.surname + " " + self.username + " " + str(
-            self.player_id)
+        return self.name + " " + self.surname + " " + self.username
 
 
 class Field(models.Model):
@@ -18,11 +17,11 @@ class Field(models.Model):
 
     def __str__(self):
         return self.name + " " + self.address + " " + str(
-            self.duration) + " " + str(self.field_id)
+            self.duration)
 
 
 class Sport(models.Model):
     name = models.CharField(max_length=50, null=False)
 
     def __str__(self):
-        return self.name + " " + str(self.sport_id)
+        return self.name
