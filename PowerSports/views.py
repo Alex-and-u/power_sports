@@ -17,8 +17,8 @@ def home(request):
 #     return HttpResponseRedirect(html_template.render(context, request))
 
 def user_register(request):
-    form = RegisterForm(request.GET or None)
-    if request.method == 'GET':
+    form = RegisterForm(request.POST or None)
+    if request.method == 'POST':
         if form.is_valid():
             form.save()
             return redirect('login')
