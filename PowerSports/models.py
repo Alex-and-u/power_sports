@@ -30,7 +30,6 @@ class Sport(models.Model):
 
 # class Town(models.Model):
 #     name_town = models.CharField(max_lenght=50, null=False)
-#     name_county = models.CharField(max_length=50, null=False)
 
 class Location(models.Model):
     name = models.CharField(max_length=50)
