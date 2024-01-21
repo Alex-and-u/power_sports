@@ -204,12 +204,13 @@
      float: left;
      width: 100%;
 }
- .PS-logo {
+ .logo {
      float: left;
      padding: 7px 0 6px;
      margin: 0 0 0 0px;
      position: relative;
 }
+
  .menu {
      float: left;
      width: 100%;
@@ -1780,7 +1781,7 @@ body section#contant .post-info span h4 {
          padding: 15px 0 10px;
          margin: 0 0 0 0px;
          position: relative;
-         width: 100%;
+         width: 50%;
          text-align: center;
     }
      .logo img {
