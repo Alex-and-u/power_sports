@@ -79,7 +79,7 @@
  .item {
      display: none;
      position: relative;
-     .transition(s ease-in-out left);
+     transition(s ease-in-out left);
 }
  .slider-contant h3 {
      font-size: 58px;
@@ -1333,7 +1333,7 @@ section#contant h4 {
      margin-top: 50px;
      min-height: auto;
      padding: 50px 0;
-     background-position: cover;
+     background-position: center;
      color: #fff;
 }
  section.main-heading .dark-section h2 {
@@ -1379,8 +1379,8 @@ section#contant h4 {
      font-size: 14px;
 }
  .footer-logo img {
-     width: 180px;
-     padding-top: 10px;
+     width: 200px;
+     padding-top: 30px;
 }
  .feature-post {
      float: left;
@@ -1757,7 +1757,7 @@ body section#contant .post-info span h4 {
      padding: 9px 30px;
      border: none;
      margin: 10px 0 10px;
-     font-size: 16px;
+     font-size: 16px;cz
      text-transform: none;
      letter-spacing: 0px;
      background: #d8302f;

@@ -2,6 +2,7 @@ from django.urls import path
 from PowerSports import views
 from .views import user_login, user_register
 
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('login/', user_login, name='login'),

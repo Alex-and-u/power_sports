@@ -44,6 +44,11 @@
                 <div class="col-md-6">
                     <div class="full">
                         <div class="logo">
+                            <style>.logo img{
+    width: 300px;
+    height: 150px;
+
+}</style>
                             <a href="{% url 'home' %}"><img
                                     src="/static/assets/images/logo.png"
                                     alt="#"/></a>
@@ -67,7 +72,7 @@
                         <!-- button section -->
                         {% if request.user.is_authenticated %}
                             <p>{{ request.user.username }}</p>
-                                <a href="{% url 'logout' %}" class="logout"></a>
+                            <p> <a href="{% url 'logout' %}" class="logout"></a></p>
                         {% else %}
                             <ul class="login">
                                 <li class="login-modal">
@@ -299,7 +304,7 @@
                     <div class="footer-widget">
                         <div class="footer-logo">
                             <a href="#"><img
-                                    src="/static/assets/images/footer-logo.png"
+                                    src="/static/assets/images/logo.png"
                                     alt="#"/></a>
                         </div>
                         <p>Most of our fields have easy route choices
