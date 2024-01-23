@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 
 def home(request):
     html_template = loader.get_template('index.html')
-    context = {'home': home}
+    context = {}
     return HttpResponse(html_template.render(context, request))
 
 # def register(request):

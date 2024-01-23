@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Player
+from .models import Field
 
 
 class RegisterForm(UserCreationForm):
@@ -9,14 +9,15 @@ class RegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ("username", "email", "password1", "password2")
+        # fields = ['username', 'password1', 'password2']
+        fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
 
-    def save(self, commit=True):
-        user = super(RegisterForm, self).save(commit=False)
-        user.email = self.cleaned_data['email']
-        if commit:
-            user.save()
-        return user
+        def save(self, commit=True):
+            user = super(RegisterForm, self).save(commit=False)
+            user.email = self.cleaned_data['email']
+            if commit:
+                user.save()
+            return user
 
 
 class LoginForm(forms.Form):
@@ -28,6 +29,11 @@ class LoginForm(forms.Form):
         widget=forms.PasswordInput(
             attrs={'placeholder': 'Password', 'class': 'form-control'}
         ))
+
+# class FieldForm(forms.ModelForm):
+#     class Meta:
+#         model = Field
+#         field = '__all__'
 
 
 
