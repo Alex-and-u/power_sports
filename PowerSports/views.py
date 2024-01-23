@@ -23,7 +23,8 @@ def user_register(request):
             form.save()
             return redirect('login')
     else:
-        return render(request, 'register.html', {'form': form})
+        form = RegisterForm()
+    return render(request, 'register.html', {'form': form})
 
 
 def user_login(request):

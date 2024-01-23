@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Mobile Metas -->
@@ -18,7 +17,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/style.css">
     <!-- Colors CSS -->
     <link rel="stylesheet" href="/static/assets/css/colors.css">
     <!-- ALL VERSION CSS -->
@@ -45,11 +44,6 @@
                 <div class="col-md-6">
                     <div class="full">
                         <div class="logo">
-                            <style>.logo img{
-    width: 300px;
-    height: 150px;
-
-}</style>
                             <a href="{% url 'home' %}"><img
                                     src="/static/assets/images/logo.png"
                                     alt="#"/></a>
@@ -73,7 +67,7 @@
                         <!-- button section -->
                         {% if request.user.is_authenticated %}
                             <p>{{ request.user.username }}</p>
-                            <p> <a href="{% url 'logout' %}" class="logout"></a></p>
+                                <a href="{% url 'logout' %}" class="logout"></a>
                         {% else %}
                             <ul class="login">
                                 <li class="login-modal">
@@ -229,7 +223,8 @@
                            <div class="slider-contant" data-animation="animated fadeInRight">
                               <h3>If you Don’t Practice<br>You <span class="color-yellow">Don’t Deserve</span><br>to win!</h3>
                               <div>
-
+                                  <button class="btn btn-primary btn-lg">Read More</button>
+                                  <a href="{% url 'about' %}" class="about"></a>
                               </div>
                            </div>
                         </div>
@@ -305,11 +300,11 @@
                     <div class="footer-widget">
                         <div class="footer-logo">
                             <a href="#"><img
-                                    src="/static/assets/images/logo.png"
+                                    src="/static/assets/images/footer-logo.png"
                                     alt="#"/></a>
                         </div>
-                        <p>Most of our fields have easy route choices
-                            as we are always keen to encourage new players.</p>
+                        <p>Most of our events have hard and easy route choices
+                            as we are always keen to encourage new riders.</p>
 {#                        <ul class="social-icons style-4 pull-left">#}
 {#                            <li><a class="facebook" href="#"><i#}
 {#                                    class="fa fa-facebook"></i></a></li>#}
