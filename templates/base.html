@@ -56,41 +56,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="right_top_section">
-                        <!-- social icon -->
-{#                        <ul class="social-icons pull-left">#}
-{#                            <li><a class="facebook" href="#"><i#}
-{#                                    class="fa fa-facebook"></i></a></li>#}
-{#                            <li><a class="twitter" href="#"><i#}
-{#                                    class="fa fa-twitter"></i></a></li>#}
-{#                            <li><a class="youtube" href="#"><i#}
-{#                                    class="fa fa-youtube-play"></i></a></li>#}
-{#                            <li><a class="pinterest" href="#"><i#}
-{#                                    class="fa fa-pinterest-p"></i></a></li>#}
-{#                        </ul>#}
-                        <!-- end social icon -->
-                        <!-- button section -->
-                        {% if request.user.is_authenticated %}
-                            <p>{{ request.user.username }}</p>
-                            <p> <a href="{% url 'logout' %}" class="logout"></a></p>
-                        {% else %}
-                            <ul class="login">
-                                <li class="login-modal">
-                                    <a href="{% url 'login' %}" class="login"><i
-                                            class="fa fa-user"></i>Login</a>
-                                </li>
-                                <li>
-                                    <div class="cart-option">
-                                        <a href="{% url 'register' %}"><i
-                                                class="fa fa-shopping-cart"></i>Register</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        {% endif %}
-                        <!-- end button section -->
-                    </div>
-                </div>
             </div>
         </div>
         <div class="header-bottom">
@@ -141,26 +106,31 @@
                         </div>
                      </div>
                      <div class="col-md-6">
-                        <div class="right_top_section">
-                           <!-- social icon -->
-{#                           <ul class="social-icons pull-left">#}
-{#                              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>#}
-{#                              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>#}
-{#                              <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>#}
-{#                              <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>#}
-{#                           </ul>#}
-                           <!-- end social icon -->
+                        <li class="right_top_section">
                            <!-- button section -->
-                           <ul class="login">
-                              <li class="login-modal">
-                                 <a href="{% url 'login' %}" class="login"><i class="fa fa-user"></i>Login</a>
-                              </li>
-                              <li>
-                                 <div class="cart-option">
-                                    <a href="{% url 'register' %}"><i class="fa fa-shopping-cart"></i>Register</a>
-                                 </div>
-                              </li>
-                           </ul>
+                        {% if request.user.is_authenticated %}
+{#                            <li class="login">#}
+                            <p>{{ request.user.username }}</p></li>
+                                <ul class="login">
+                                    <li class="logout-modal">
+                                        <a href="{% url 'logout' %}"><i
+                                                 class="fa fa-shopping-cart"></i>Logout</a>
+                                    </li>
+                                </ul>
+                        {% else %}
+                            <ul class="login">
+                                <li class="login-modal">
+                                    <a href="{% url 'login' %}" class="login"><i
+                                            class="fa fa-user"></i>Login</a>
+                                </li>
+                                <li>
+                                    <div class="cart-option">
+                                        <a href="{% url 'register' %}"><i
+                                                class="fa fa-shopping-cart"></i>Register</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        {% endif %}
                            <!-- end button section -->
                         </div>
                      </div>
