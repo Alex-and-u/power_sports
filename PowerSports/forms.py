@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Field
+from .models import Field, Player
 
 
 class RegisterForm(UserCreationForm):
@@ -30,10 +30,14 @@ class LoginForm(forms.Form):
             attrs={'placeholder': 'Password', 'class': 'form-control'}
         ))
 
-# class FieldForm(forms.ModelForm):
-#     class Meta:
-#         model = Field
-#         field = '__all__'
+class FieldForm(forms.ModelForm):
+    class Meta:
+        model = Field
+        fields = '__all__'
 
 
+class PlayerForm(forms.ModelForm):
+    class Meta:
+        model = Player
+        fields = ['user']
 

@@ -2,7 +2,7 @@
 {% block content %}
       <!-- END LOADER -->
     {% if user.is_authenticated %}
-        Hi {{ user.username }}!
+        <p class="h4">Hi {{ user.username }}!</p>
     {% else %}
     <p>You are not logged in</p>
     <a href="{% url 'login' %}">Log In</a>

@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template import loader
-from .forms import RegisterForm, LoginForm
+from .forms import RegisterForm, LoginForm, FieldForm, PlayerForm
 from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
@@ -69,8 +69,12 @@ def contact(request):
 
 
 def news(request):
+    form = FieldForm(request.POST or None)
     html_template = loader.get_template('news.html')
-    context = {}
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+    context = {'form': form}
     return HttpResponse(html_template.render(context, request))
 
 
@@ -81,7 +85,13 @@ def single_blog(request):
 
 
 def team(request):
+    form = PlayerForm(request.POST or None)
     html_template = loader.get_template('team.html')
-    context = {}
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+    else:
+        form = PlayerForm()
+    context = {'form': form}
     return HttpResponse(html_template.render(context, request))
 
