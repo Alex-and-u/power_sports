@@ -7,10 +7,6 @@
     </form>
 
       <section id="top">
-         <div class="inner-page-banner">
-            <div class="container">
-            </div>
-         </div>
          <div class="inner-information-text">
             <div class="container">
                <h3>Sports</h3>
@@ -28,41 +24,37 @@
                   <div class="news-post-holder">
                      <div class="col-lg-6 col-sm-6 col-xs-12">
                         <div class="news-post-widget">
-                           <img class="img-responsive" src="/static/assets/images/img-01_002.jpg" alt="">
+                           <img class="img-responsive" src="/static/assets/images/tenis.jpg" alt="">
                            <div class="news-post-detail">
-                              <span class="date">20 march 2016</span>
-                              <h2><a href="blog-detail.html">Free play to ground in anywhere</a></h2>
-                              <p>Just hours after that his grandma had died, Angel Di Maria imagined how she might react if he didn't play</p>
+                              <h2><a href="blog-detail.html">Tennis</a></h2>
+                              <p>Game, Set, Match!</p>
                            </div>
                         </div>
                      </div>
                      <div class="col-lg-6 col-sm-6 col-xs-12">
                         <div class="news-post-widget">
-                           <img class="img-responsive" src="/static/assets/images/img-01_002.jpg" alt="">
+                           <img class="img-responsive" src="/static/assets/images/football.jpg" alt="">
                            <div class="news-post-detail">
-                              <span class="date">20 march 2016</span>
-                              <h2><a href="blog-detail.html">Free play to ground in anywhere</a></h2>
-                              <p>Just hours after that his grandma had died, Angel Di Maria imagined how she might react if he didn't play</p>
+                              <h2><a href="blog-detail.html">Football</a></h2>
+                              <p>Unleash Your Inner Champion!</p>
                            </div>
                         </div>
                      </div>
                      <div class="col-lg-6 col-sm-6 col-xs-12">
                         <div class="news-post-widget">
-                           <img class="img-responsive" src="/static/assets/images/img-01_002.jpg" alt="">
+                           <img class="img-responsive" src="/static/assets/images/volleyball.jpg" alt="">
                            <div class="news-post-detail">
-                              <span class="date">20 march 2016</span>
-                              <h2><a href="blog-detail.html">Free play to ground in anywhere</a></h2>
-                              <p>Just hours after that his grandma had died, Angel Di Maria imagined how she might react if he didn't play</p>
+                              <h2><a href="blog-detail.html">Voleyball</a></h2>
+                              <p>Serve it like you mean it!</p>
                            </div>
                         </div>
                      </div>
                      <div class="col-lg-6 col-sm-6 col-xs-12">
                         <div class="news-post-widget">
-                           <img class="img-responsive" src="/static/assets/images/img-01_002.jpg" alt="">
+                           <img class="img-responsive" src="/static/assets/images/basketball.jpg" alt="">
                            <div class="news-post-detail">
-                              <span class="date">20 march 2016</span>
-                              <h2><a href="blog-detail.html">Free play to ground in anywhere</a></h2>
-                              <p>Just hours after that his grandma had died, Angel Di Maria imagined how she might react if he didn't play</p>
+                              <h2><a href="blog-detail.html">Basketball</a></h2>
+                              <p>Hoops and Laughs: It’s a Slam Dunk Combination.</p>
                            </div>
                         </div>
                      </div>
@@ -72,24 +64,29 @@
                   <div class="content-widget top-story" style="background: url(static/assets/images/sport-mate.png);">
                      <div class="top-stroy-header">
                         <h2>Top Soccer Headlines Story <a href="#" class="fa fa-fa fa-angle-right"></a></h2>
-                        <span class="date">July 05, 2017</span>
-                        <h2>Other Headlines</h2>
+                        <hr>
+                         <div id="current_date">
+                            <script>
+                                date = new Date();
+                                year = date.getFullYear();
+                                month = date.getMonth() + 1;
+                                day = date.getDate();
+                                document.getElementById("current_date").innerHTML = month + "/" + day + "/" + year;
+                            </script>
+                        </div>
                      </div>
                      <ul class="other-stroies">
-                        <li><a href="#">Wenger Vardy won't start</a></li>
-                        <li><a href="#">Evans: Vardy just</a></li>
-                        <li><a href="#">Pires and Murray </a></li>
-                        <li><a href="#">Okazaki backing</a></li>
-                        <li><a href="#">Wolfsburg's Rodriguez</a></li>
-                        <li><a href="#">Jamie Vardy compared</a></li>
-                        <li><a href="#">Arsenal target Mkhitaryan</a></li>
-                        <li><a href="#">Messi wins libel case.</a></li>
+                        <li><a href="https://www.skysports.com/football/video/30998/13061162/the-verdict-are-liverpool-now-premier-league-title-favourites">The Verdict: Liverpool 'just about' title favourites</a></li>
+                        <li><a href="https://www.bbc.com/sport/boxing/68081148">Conor Benn wants 'mega fight' with Devin Haney in UK</a></li>
+                        <li><a href="https://www.theguardian.com/sport/2024/jan/26/lando-norris-commits-to-mclaren-until-2o26-and-targets-tilt-at-formula-one-title">Lando Norris commits to McLaren until 2026 </a></li>
+                        <li><a href="https://www.theguardian.com/football/2024/feb/01/chris-wilder-hits-out-at-perceived-bias-against-sheffield-united-from-officials">Chris Wilder hits out at perceived bias</a></li>
+                        <li><a href="https://www.skysports.com/football/live-blog/11670/13025486/arsenal-transfer-news-and-rumours-ivan-toney-martin-zubimendi-borja-mayoral-joao-palhinha-eddie-nketiah-thomas-partey-and-aaron-ramsdale-latest">Arsenal transfer news and rumours</a></li>
                      </ul>
                   </div>
                   <aside id="sidebar" class="right-bar">
-                     <div class="banner">
-                        <img class="img-responsive" src="/static/assets/images/adds-3.jpg" alt="#">
-                     </div>
+{#                     <div class="banner">#}
+{#                        <img class="img-responsive" src="/static/assets/images/adds-3.jpg" alt="#">#}
+{#                     </div>#}
                   </aside>
                </div>
             </div>

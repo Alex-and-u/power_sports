@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="/static/assets/css/style.css">
-    <!-- Colors CSS -->
-{#    <link rel="stylesheet" href="/static/assets/css/colors.css">#}
-{#    <!-- ALL VERSION CSS -->#}
-{#    <link rel="stylesheet" href="/static/assets/css/versions.css">#}
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="/static/assets/css/responsive.css">
     <!-- Custom CSS -->
@@ -45,49 +41,20 @@
                 <div class="col-md-6">
                     <div class="full">
                         <div class="logo">
-                            <style>.logo img{
-    width: 300px;
-    height: 150px;
-
-}</style>
+                            <style>.logo img {
+                                width: 300px;
+                                height: 150px;
+                                }
+                            </style>
                             <a href="{% url 'home' %}"><img
-                                    src="/static/assets/images/logo.png"
+                                    src="/static/assets/images/logo-2.png"
                                     alt="#"/></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="header-bottom">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="full">
-                        <div class="main-menu-section">
-                            <div class="menu">
-                                <nav class="navbar navbar-inverse">
-                                    <div class="navbar-header">
-                                        <button class="navbar-toggle"
-                                                type="button"
-                                                data-toggle="collapse"
-                                                data-target=".js-navbar-collapse">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                        <a class="navbar-brand"
-                                           href="#">Menu</a>
-                                    </div>
-
-                                    <!-- /.nav-collapse -->
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </div>>
 </header>
       <!-- LOADER -->
       <div id="preloader">
@@ -101,21 +68,25 @@
                      <div class="col-md-6">
                         <div class="full">
                            <div class="logo">
-                              <a href="index.html"><img src="/static/assets/images/logo.png" alt="#" /></a>
+                              <a href="index.html"><img src="/static/assets/images/logo-2.png" alt="#" /></a>
                            </div>
                         </div>
                      </div>
                      <div class="col-md-6">
                         <li class="right_top_section">
                            <!-- button section -->
-                        {% if request.user.is_authenticated %}
-{#                            <li class="login">#}
-                            <p>{{ request.user.username }}</p></li>
+                        {% if user.is_authenticated %}
                                 <ul class="login">
+                                <element style="
+                                     position: absolute;
+                                     left: 400px;
+                                     top: 30px;
+                                    ">
                                     <li class="logout-modal">
                                         <a href="{% url 'logout' %}"><i
                                                  class="fa fa-shopping-cart"></i>Logout</a>
                                     </li>
+                                </element>
                                 </ul>
                         {% else %}
                             <ul class="login">
@@ -163,16 +134,7 @@
                                     </div>
                                     <!-- /.nav-collapse -->
                                  </nav>
-                                 <div class="search-bar">
-                                    <div id="imaginary_container">
-                                       <div class="input-group stylish-input-group">
-                                          <input type="text" class="form-control"  placeholder="Search" >
-                                          <span class="input-group-addon">
-                                          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                          </span>
-                                       </div>
-                                    </div>
-                                 </div>
+                                 </element>
                               </div>
                            </div>
                         </div>
@@ -253,7 +215,7 @@
                      <p class="headline"><i class="fa fa-star" aria-hidden="true"></i> Top Headlines :</p>
                      <!--made by vipul mirajkar thevipulm.appspot.com-->
                      <h1>
-                     <a href="" class="typewrite" data-period="2000" data-type='[ "Contrary to popular belief, Lorem Ipsum is not simply random text.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."]'>
+                     <a href="" class="typewrite" data-period="2000" data-type='[ "Playground Legends in the Making.", "Overpower. Overtake. Overcome..", "The five S’s of sports training are: stamina, speed, strength, skill, and spirit; but the greatest of these is spirit."]'>
                      <span class="wrap"></span>
                      </a>
                      </h1>
@@ -275,21 +237,11 @@
                     <div class="footer-widget">
                         <div class="footer-logo">
                             <a href="#"><img
-                                    src="/static/assets/images/logo.png"
+                                    src="/static/assets/images/logo-2.png"
                                     alt="#"/></a>
                         </div>
                         <p>Most of our fields have easy route choices
                             as we are always keen to encourage new players.</p>
-{#                        <ul class="social-icons style-4 pull-left">#}
-{#                            <li><a class="facebook" href="#"><i#}
-{#                                    class="fa fa-facebook"></i></a></li>#}
-{#                            <li><a class="twitter" href="#"><i#}
-{#                                    class="fa fa-twitter"></i></a></li>#}
-{#                            <li><a class="youtube" href="#"><i#}
-{#                                    class="fa fa-youtube-play"></i></a></li>#}
-{#                            <li><a class="pinterest" href="#"><i#}
-{#                                    class="fa fa-pinterest-p"></i></a></li>#}
-{#                        </ul>#}
                     </div>
                 </div>
             </div>
@@ -311,8 +263,6 @@
                     <div class="footer-widget">
                         <h3>Contact us</h3>
                         <ul class="address-list">
-                            <li><i class="fa fa-map-marker"></i> Lorem Ipsum is
-                                simply dummy text of the printing..
                             </li>
                             <li><i class="fa fa-phone"></i> 123 456 7890</li>
                             <li><i style="font-size:20px;top:5px;"
@@ -322,23 +272,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="full">
-                    <div class="contact-footer">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d120615.72236587871!2d73.07890527988283!3d19.140910987164396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1527759905404"
-                                width="600" height="350" frameborder="0"
-                                style="border:0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <div class="footer-bottom">
-        <div class="container">
-            <p>Copyright © 2018 Distributed by <a href="https://themewagon.com/"
-                                                  target="_blank">ThemeWagon</a>
-            </p>
-        </div>
     </div>
 </footer>
 <a href="#home" data-scroll class="dmtop global-radius"><i
