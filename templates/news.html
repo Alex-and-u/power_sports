@@ -1,10 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Create a field</button>
-    </form>
 
       <section id="top">
          <div class="inner-information-text">
@@ -26,7 +21,7 @@
                         <div class="news-post-widget">
                            <img class="img-responsive" src="/static/assets/images/tenis.jpg" alt="">
                            <div class="news-post-detail">
-                              <h2><a href="blog-detail.html">Tennis</a></h2>
+                              <h2><a href="{% url 'Tennis' %}">Tennis</a></h2>
                               <p>Game, Set, Match!</p>
                            </div>
                         </div>
@@ -35,7 +30,7 @@
                         <div class="news-post-widget">
                            <img class="img-responsive" src="/static/assets/images/football.jpg" alt="">
                            <div class="news-post-detail">
-                              <h2><a href="blog-detail.html">Football</a></h2>
+                              <h2><a href="{% url 'Football' %}">Football</a></h2>
                               <p>Unleash Your Inner Champion!</p>
                            </div>
                         </div>
@@ -44,7 +39,7 @@
                         <div class="news-post-widget">
                            <img class="img-responsive" src="/static/assets/images/volleyball.jpg" alt="">
                            <div class="news-post-detail">
-                              <h2><a href="blog-detail.html">Voleyball</a></h2>
+                              <h2><a href="{% url 'Voleyball' %}">Voleyball</a></h2>
                               <p>Serve it like you mean it!</p>
                            </div>
                         </div>
@@ -53,7 +48,7 @@
                         <div class="news-post-widget">
                            <img class="img-responsive" src="/static/assets/images/basketball.jpg" alt="">
                            <div class="news-post-detail">
-                              <h2><a href="blog-detail.html">Basketball</a></h2>
+                              <h2><a href="{% url 'Basketball' %}">Basketball</a></h2>
                               <p>Hoops and Laughs: It’s a Slam Dunk Combination.</p>
                            </div>
                         </div>

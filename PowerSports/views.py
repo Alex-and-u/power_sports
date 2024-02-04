@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template import loader
-from .forms import RegisterForm, LoginForm, FieldForm, PlayerForm
+from .forms import RegisterForm, LoginForm, FieldForm, ChoiceForm
 from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
@@ -69,13 +69,13 @@ def contact(request):
 
 
 def news(request):
-    form = FieldForm(request.POST or None)
+    form = ChoiceForm()
     html_template = loader.get_template('news.html')
     if request.method == 'POST':
         if form.is_valid():
             form.save()
     context = {'form': form}
-    return HttpResponse(html_template.render(context, request))
+    return render(request,'news.html', context)
 
 
 def single_blog(request):
@@ -84,14 +84,50 @@ def single_blog(request):
     return HttpResponse(html_template.render(context, request))
 
 
-def team(request):
-    form = PlayerForm(request.POST or None)
-    html_template = loader.get_template('team.html')
+def tennis(request):
+    form = ChoiceForm(request.POST or None)
+    html_template = loader.get_template('tennis.html')
     if request.method == 'POST':
         if form.is_valid():
             form.save()
     else:
-        form = PlayerForm()
+        form = ChoiceForm()
     context = {'form': form}
     return HttpResponse(html_template.render(context, request))
+
+def footbal(request):
+    form = ChoiceForm(request.POST or None)
+    html_template = loader.get_template('football.html')
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+    else:
+        form = ChoiceForm()
+    context = {'form': form}
+    return HttpResponse(html_template.render(context, request))
+
+def voleyball(request):
+    form = ChoiceForm(request.POST or None)
+    html_template = loader.get_template('voleyball.html')
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+    else:
+        form = ChoiceForm()
+    context = {'form': form}
+    return HttpResponse(html_template.render(context, request))
+
+def basketball(request):
+    form = ChoiceForm(request.POST or None)
+    html_template = loader.get_template('basketball.html')
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+    else:
+        form = ChoiceForm()
+    context = {'form': form}
+    return HttpResponse(html_template.render(context, request))
+
+
+
 

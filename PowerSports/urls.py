@@ -13,6 +13,9 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('news/', views.news, name='news'),
     path('single_blog/', views.single_blog, name='single_blog'),
-    path('team/', views.team, name='team'),
+    path('Tennis/', views.tennis, name='Tennis'),
+    path('Football/', views.footbal, name='Football'),
+    path('Voleyball/', views.voleyball, name='Voleyball'),
+    path('Basketball/', views.basketball, name='Basketball'),
     # path('register/', views.register, name='register')
 ]

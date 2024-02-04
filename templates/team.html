@@ -1,21 +1,21 @@
-{% extends 'base.html' %}
-{% block content %}
-     <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save data</button>
-    </form>
-      <section id="top">
-         <div class="inner-information-text">
-            <div class="container">
-               <h3>Players</h3>
-               <ul class="breadcrumb">
-                  <li><a href="index.html">Home</a></li>
-                  <li class="active">Players</li>
-               </ul>
-            </div>
-         </div>
-      </section>
+{#{% extends 'base.html' %}#}
+{#{% block content %}#}
+{#     <form method="POST">#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#        <button type="submit">Save data</button>#}
+{#    </form>#}
+{#      <section id="top">#}
+{#         <div class="inner-information-text">#}
+{#            <div class="container">#}
+{#               <h3>Players</h3>#}
+{#               <ul class="breadcrumb">#}
+{#                  <li><a href="index.html">Home</a></li>#}
+{#                  <li class="active">Players</li>#}
+{#               </ul>#}
+{#            </div>#}
+{#         </div>#}
+{#      </section>#}
 {#      <section id="contant" class="contant main-heading team">#}
 {#         <div class="row">#}
 {#            <div class="container">#}
@@ -118,4 +118,4 @@
 {#            </div>#}
 {#         </div>#}
 {#      </section>#}
-{% endblock %}
+{#{% endblock %}#}
