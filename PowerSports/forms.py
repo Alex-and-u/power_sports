@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Field
+from .models import Player
 from django.contrib import messages
 from datetime import datetime, timedelta
 
@@ -37,10 +38,10 @@ class FieldForm(forms.ModelForm):
         fields = '__all__'
 
 
-# class PlayerForm(forms.ModelForm):
-#     class Meta:
-#         model = Player
-#         fields = ['user']
+class PlayerForm(forms.ModelForm):
+    class Meta:
+        model = Player
+        fields = ['user']
 
 
 class ChoiceForm(forms.Form):
