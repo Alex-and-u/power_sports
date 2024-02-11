@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.template import loader
 from .forms import RegisterForm, LoginForm, FieldForm, ChoiceForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
 
@@ -16,7 +17,7 @@ def home(request):
 #     context = {}
 #     return HttpResponseRedirect(html_template.render(context, request))
 
-def user_register(request):
+def register(request):
     form = RegisterForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():

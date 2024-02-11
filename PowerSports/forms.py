@@ -2,24 +2,34 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Field
-from .models import Player
+from django.forms import ModelForm, TextInput, EmailInput
 from django.contrib import messages
 from datetime import datetime, timedelta
 
+
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+    email = forms.EmailField( widget=forms.EmailInput(attrs={'class':'form-control'}))
+    username = forms.CharField(max_length=50, widget=forms.EmailInput(attrs={'class':'form-control'}))
+
 
     class Meta:
         model = User
-        # fields = ['username', 'password1', 'password2']
-        fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
 
-        def save(self, commit=True):
-            user = super(RegisterForm, self).save(commit=False)
-            user.email = self.cleaned_data['email']
-            if commit:
-                user.save()
-            return user
+
+        # def save(self, commit=True):
+        #     user = super(RegisterForm, self).save(commit=False)
+        #     user.email = self.cleaned_data['email']
+        #     if commit:
+        #         user.save()
+        #     return user
+
+
+    def __init__(self, *args, **kwargs):
+        super(RegisterForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs['class'] = 'form-control'
+        self.fields['password1'].widget.attrs['class'] = 'form-control'
+        self.fields['password2'].widget.attrs['class'] = 'form-control'
 
 
 class LoginForm(forms.Form):
@@ -32,16 +42,17 @@ class LoginForm(forms.Form):
             attrs={'placeholder': 'Password', 'class': 'form-control'}
         ))
 
+
 class FieldForm(forms.ModelForm):
     class Meta:
         model = Field
         fields = '__all__'
 
 
-class PlayerForm(forms.ModelForm):
-    class Meta:
-        model = Player
-        fields = ['user']
+# class PlayerForm(forms.ModelForm):
+#     class Meta:
+#         model = Player
+#         fields = ['user']
 
 
 class ChoiceForm(forms.Form):
@@ -93,7 +104,22 @@ class ChoiceForm(forms.Form):
     players = forms.ChoiceField(
         choices=number_of_players)
 
-    date = forms.DateTimeField(widget = forms.SelectDateWidget)
+    date = forms.DateTimeField(widget=forms.SelectDateWidget)
+
+    TIME_CHOICES = (
+        ('9:00 - 9:30', '9:00 - 10:30'),
+        ('9:31 - 10:00', '10:31 - 12:00'),
+        ('10:31 - 11:00', '12:01 - 13:30'),
+        ('11:01 - 11:30', '13:31 - 15:00'),
+        ('11:31 - 12:30', '15:01 - 16:30'),
+        ('12:31 - 13:00', '16:31 - 18:00'),
+        ('13:01 - 13:30', '18:01 - 19:30'),
+        ('13:31 - 14:00', '19:31 - 21:00'),
+        ('14:01 - 14:30', '21:01 - 22:30'),
+        ('14:31 - 15:00', '22:31 - 00:00'),
+    )
+    time = forms.ChoiceField(
+        choices=TIME_CHOICES)
 
 
 
