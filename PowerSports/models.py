@@ -1,7 +1,10 @@
 from django.contrib.auth.models import User
 from django.contrib.gis.geoip2.resources import City
 from django.db import models
-from datetime import datetime
+from django.forms.widgets import NumberInput
+from django.db.models.functions import Now
+from django.contrib.admin.widgets import AdminDateWidget
+from datetime import date
 
 
 # Create your models here.
@@ -32,10 +35,25 @@ class Sport(models.Model):
 
 
 
-# class Rezervation(models.Model):
-#     name = models.CharField(max_length=50)
-#     county = models.CharField(max_length=50)
-#     city = models.CharField(max_length=50)
+class City(models.Model):
+    name = models.CharField(max_length=50, default='')
+    def __str__(self):
+        return self.name
+
+
+class Address(models.Model):
+    name = models.CharField(max_length=150, default='')
+    city = models.ForeignKey('City', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
+
+
+class Booking(models.Model):
+    city = models.ForeignKey('City', on_delete=models.CASCADE)
+    address = models.ForeignKey('Address', on_delete=models.CASCADE)
+    no_of_players = models.IntegerField()
+    date = models.DateTimeField(auto_now=True)
+    time = models.CharField(max_length=50, default='')
 
 
 
