@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
+    <div class="shadow p-4 mb-5 bg-body rounded form-group-sm" style="background-color: #c4e3f3">
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
     <h2>Create a booking</h2>
     <br/><br/>
 <form method="POST">
@@ -7,6 +9,8 @@
         {{ form.as_p }}
         <button type="submit">Create a field</button>
     </form>
+    </div>
+    </div>
 <div id='map'></div>
 
 <script>
