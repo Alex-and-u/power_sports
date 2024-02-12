@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Field, Booking, City
+from .models import Field, Booking
 from django.contrib.admin.widgets import AdminDateWidget
 from django.forms import ModelForm, TextInput, EmailInput
 from django.contrib import messages
@@ -58,6 +58,14 @@ class ChoiceForm(forms.ModelForm):
         model = Booking
         fields = '__all__'
 
+    def __init__(self, *args, **kwargs):
+        super(ChoiceForm, self).__init__(*args, **kwargs)
+        self.fields['city'].widget.attrs['class'] = 'form-control'
+        self.fields['address'].widget.attrs['class'] = 'form-control'
+        self.fields['no_of_players'].widget.attrs['class'] = 'form-control'
+        self.fields['date'].widget.attrs['class'] = 'form-control'
+        self.fields['time'].widget.attrs['class'] = 'form-control'
+
     date = forms.DateField(widget=forms.SelectDateWidget)
 
     TIME_CHOICES = (
@@ -74,6 +82,8 @@ class ChoiceForm(forms.ModelForm):
     )
     time = forms.ChoiceField(
         choices=TIME_CHOICES)
+
+
 
 
 

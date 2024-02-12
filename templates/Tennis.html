@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="shadow p-4 mb-5 bg-body rounded">
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
     <h2>Create a booking</h2>
+        <br/><br/>
+    <div class="form-group">
 <form method="POST">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
         <button type="submit">Create a field</button>
     </form>
+        </div>
+
+
 <div id='map'></div>
 
 <script>

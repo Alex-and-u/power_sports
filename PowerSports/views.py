@@ -87,7 +87,7 @@ def single_blog(request):
 
 def tennis(request):
     form = ChoiceForm(request.POST or None)
-    html_template = loader.get_template('tennis.html')
+    html_template = loader.get_template('Tennis.html')
     if request.method == 'POST':
         if form.is_valid():
             form.save()
@@ -98,7 +98,7 @@ def tennis(request):
 
 def footbal(request):
     form = ChoiceForm(request.POST or None)
-    html_template = loader.get_template('football.html')
+    html_template = loader.get_template('Football.html')
     if request.method == 'POST':
         if form.is_valid():
             form.save()
@@ -109,7 +109,7 @@ def footbal(request):
 
 def voleyball(request):
     form = ChoiceForm(request.POST or None)
-    html_template = loader.get_template('voleyball.html')
+    html_template = loader.get_template('Voleyball.html')
     if request.method == 'POST':
         if form.is_valid():
             form.save()
@@ -120,7 +120,7 @@ def voleyball(request):
 
 def basketball(request):
     form = ChoiceForm(request.POST or None)
-    html_template = loader.get_template('basketball.html')
+    html_template = loader.get_template('Basketball.html')
     if request.method == 'POST':
         if form.is_valid():
             form.save()
