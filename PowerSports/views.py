@@ -3,6 +3,9 @@ from django.shortcuts import render, redirect
 from django.template import loader
 from .forms import RegisterForm, LoginForm, FieldForm, ChoiceForm
 from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse_lazy
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
@@ -43,6 +46,14 @@ def user_login(request):
     else:
         msg = "Invalid user data"
     return render(request, 'login.html', {'form': form, "msg":msg})
+
+
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+    template_name = 'reset_password.html'
+    email_template_name = 'reset_password_sent.html'
+    confirm_template_name = 'reset.html'
+    complete_template_name = 'reset_password_complete.html'
+    success_url = reverse_lazy('login')
 
 
 

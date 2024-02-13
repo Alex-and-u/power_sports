@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="shadow p-4 mb-5 bg-body rounded form-group-sm" style="background-color: #c4e3f3">
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+
+    <h3>Change password!</h3>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Change password</button>
+    </form>
+        </div>
+  </div>
+{% endblock %}
