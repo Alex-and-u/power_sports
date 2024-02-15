@@ -7,10 +7,10 @@
 <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Create a field</button>
+    <button type="submit">Create a field</button>
     </form>
 
-    </div>
+
 <div id='map'></div>
 
 <script>
@@ -40,5 +40,6 @@
 	const mOrange = L.marker([51.49, -0.1], {icon: orangeIcon}).bindPopup('I am an orange leaf.').addTo(map);
 
 </script>
+    </div>
     </div>
 {% endblock %}

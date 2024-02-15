@@ -1,10 +1,6 @@
 from django.contrib.auth.models import User
-from django.contrib.gis.geoip2.resources import City
 from django.db import models
-from django.forms.widgets import NumberInput
-from django.db.models.functions import Now
-from django.contrib.admin.widgets import AdminDateWidget
-from datetime import date
+
 
 
 # Create your models here.
@@ -51,9 +47,11 @@ class Address(models.Model):
 class Booking(models.Model):
     city = models.ForeignKey('City', on_delete=models.CASCADE)
     address = models.ForeignKey('Address', on_delete=models.CASCADE)
-    no_of_players = models.IntegerField()
+    no_of_players = models.IntegerField(null=False)
     date = models.DateTimeField(auto_now=True)
     time = models.CharField(max_length=50, default='')
+
+
 
 
 

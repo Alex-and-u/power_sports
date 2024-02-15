@@ -213,8 +213,8 @@
 }
 
  .menu {
-     float: left;
-     width: 100%;
+     float: right;
+     width: 50%;
      min-height: auto;
      background: #fff;
 }
@@ -1800,7 +1800,7 @@ body section#contant .post-info span h4 {
      .menu .navbar-header {
          float: left;
          display: block;
-         width: 100%;
+         width: 50%;
     }
      #carousel-example-generic .carousel-caption {
          right: 0;
@@ -1821,7 +1821,7 @@ body section#contant .post-info span h4 {
          float: left;
          width: 100%;
          min-height: auto;
-         background: #fff;
+         background: #9acfea;
          border-radius: 0;
          padding: 0 20px;
     }

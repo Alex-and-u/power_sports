@@ -6,8 +6,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.forms import UserCreationForm
-# Create your views here.
+from .forms import JoinEvent
+from .models import Booking
 
 
 def home(request):
@@ -15,10 +15,6 @@ def home(request):
     context = {}
     return HttpResponse(html_template.render(context, request))
 
-# def register(request):
-#     html_template = loader.get_template('register.html')
-#     context = {}
-#     return HttpResponseRedirect(html_template.render(context, request))
 
 def register(request):
     form = RegisterForm(request.POST or None)
@@ -72,6 +68,23 @@ def blog(request):
     html_template = loader.get_template('blog.html')
     context = {}
     return HttpResponse(html_template.render(context, request))
+
+def team(request):
+    form = JoinEvent(request.POST or None)
+    html_template = loader.get_template('team.html')
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+    else:
+        form = JoinEvent()
+    context = {'form': form}
+    return HttpResponse(html_template.render(context, request))
+
+
+def events(request):
+    html_template = loader.get_template('events.html')
+    context = {}
+    return HttpResponse(request, html_template.render(context, request))
 
 
 def contact(request):
@@ -139,6 +152,9 @@ def basketball(request):
         form = ChoiceForm()
     context = {'form': form}
     return HttpResponse(html_template.render(context, request))
+
+
+
 
 
 

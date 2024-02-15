@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Field, Booking
+from .models import Field, Booking, City, Address
 from django.contrib.admin.widgets import AdminDateWidget
 from django.forms import ModelForm, TextInput, EmailInput
 from django.contrib import messages
@@ -84,6 +84,15 @@ class ChoiceForm(forms.ModelForm):
         choices=TIME_CHOICES)
 
 
+class JoinEvent(ChoiceForm):
+    class Meta:
+        model = Booking
+        fields = ['city']
 
+    def __init__(self, *args, **kwargs):
+        super(ChoiceForm, self).__init__(*args, **kwargs)
+        self.fields['city'].widget.attrs['class'] = 'form-control'
+        self.fields['date'].widget.attrs['class'] = 'form-control'
+        self.fields['time'].widget.attrs['class'] = 'form-control'
 
 

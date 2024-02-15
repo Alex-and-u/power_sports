@@ -1,6 +1,6 @@
 from django.urls import path, include
 from PowerSports import views
-from .views import user_login, register, ResetPasswordView
+from .views import user_login, register
 from django.contrib.auth import views as auth_views
 
 
@@ -16,6 +16,8 @@ urlpatterns = [
     path('logout/', views.user_logout, name='logout'),
     path('about/', views.about, name='about'),
     path('blog/', views.blog, name='blog'),
+    path('team/', views.team, name='team'),
+    path('events/', views.events, name='events'),
     path('contact/', views.contact, name='contact'),
     path('news/', views.news, name='news'),
     path('single_blog/', views.single_blog, name='single_blog'),
@@ -23,5 +25,4 @@ urlpatterns = [
     path('Football/', views.footbal, name='Football'),
     path('Voleyball/', views.voleyball, name='Voleyball'),
     path('Basketball/', views.basketball, name='Basketball'),
-    # path('register/', views.register, name='register')
 ]
