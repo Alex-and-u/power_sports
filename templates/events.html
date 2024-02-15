@@ -4,9 +4,13 @@
     <div class="shadow p-4 mb-5 bg-body rounded form-group-sm" style="background-color: #c4e3f3">
     <div class="container min-vh-100 d-flex justify-content-center align-items-center">
 
-        <h3>All the active Events that you can join below!</h3>
+        <h4>All the active Events that you can join below!</h4>
     <br/><br/>
-
+    <ul>
+        {% for events in event_list %}
+            <li>{{ events.city }} - {{ events.address }} - {{ events.time }} - {{ events.date }}</li></br>
+        {% endfor %}
+</ul>
      </div>
         </div>
 {% endblock %}

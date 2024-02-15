@@ -72,9 +72,9 @@ def blog(request):
 def team(request):
     form = JoinEvent(request.POST or None)
     html_template = loader.get_template('team.html')
-    if request.method == 'POST':
+    if request.method == request.GET:
         if form.is_valid():
-            form.save()
+            return render(request, 'events.html')
     else:
         form = JoinEvent()
     context = {'form': form}
@@ -82,9 +82,10 @@ def team(request):
 
 
 def events(request):
-    html_template = loader.get_template('events.html')
-    context = {}
-    return HttpResponse(request, html_template.render(context, request))
+    event_list = Booking.objects.all()
+    # html_template = loader.get_template('events.html')
+    # context = {'event_list': event_list}
+    return render(request, 'events.html', {'event_list': event_list})
 
 
 def contact(request):
@@ -100,7 +101,7 @@ def news(request):
         if form.is_valid():
             form.save()
     context = {'form': form}
-    return render(request,'news.html', context)
+    return render(request, 'news.html',  context)
 
 
 def single_blog(request):
@@ -137,6 +138,7 @@ def voleyball(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+
     else:
         form = ChoiceForm()
     context = {'form': form}
