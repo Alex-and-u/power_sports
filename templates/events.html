@@ -1,16 +1,47 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="shadow p-4 mb-5 bg-body rounded form-group-sm" style="background-color: #c4e3f3">
+    <div style="background-color: #c4e3f3">
     <div class="container min-vh-100 d-flex justify-content-center align-items-center">
 
         <h4>All the active Events that you can join below!</h4>
-    <br/><br/>
+    <br/><br/><br/>
     <ul>
         {% for events in event_list %}
-            <li>{{ events.city }} - {{ events.address }} - {{ events.time }} - {{ events.date }}</li></br>
-        {% endfor %}
+
+
+            <div class="card">
+  <div class="card-header">
+    Event:
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ events.city }}</h5>
+
+
+
+    <p class="card-text">
+
+            <strong>Address:</strong> {{ events.address }}<br/>
+
+            <strong>Time:</strong> {{ events.time }}<br/>
+
+            <strong>Date: </strong>{{ events.date }}<br/>
+
+             <strong>Players:</strong> {{ events.no_of_players }} <br/><br/><br/>
+
+
+            <br/><br/>
+{% endfor %}
+
+
+    </p>
+</div>
+  </div>
+
+
+
 </ul>
+
      </div>
         </div>
 {% endblock %}

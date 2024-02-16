@@ -25,4 +25,5 @@ urlpatterns = [
     path('Football/', views.footbal, name='Football'),
     path('Voleyball/', views.voleyball, name='Voleyball'),
     path('Basketball/', views.basketball, name='Basketball'),
+    # path('booking_city/', views.booking_city, name='city_filter'),
 ]

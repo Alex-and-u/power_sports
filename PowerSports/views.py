@@ -8,6 +8,7 @@ from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
 from .forms import JoinEvent
 from .models import Booking
+# from .filters import AddressFilter
 
 
 def home(request):
@@ -79,6 +80,11 @@ def team(request):
         form = JoinEvent()
     context = {'form': form}
     return HttpResponse(html_template.render(context, request))
+
+
+# def booking_city(request):
+#     city_filter = BookingFilter(request.GET, queryset=Booking.objects.all())
+#     return render(request, 'team.html', {'filter': city_filter})
 
 
 def events(request):
