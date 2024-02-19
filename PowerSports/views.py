@@ -122,6 +122,7 @@ def tennis(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+            return HttpResponseRedirect('/team')
     else:
         form = ChoiceForm()
     context = {'form': form}
@@ -133,6 +134,7 @@ def footbal(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+            return HttpResponseRedirect('/team')
     else:
         form = ChoiceForm()
     context = {'form': form}
@@ -144,6 +146,7 @@ def voleyball(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+            return HttpResponseRedirect('/team')
 
     else:
         form = ChoiceForm()
@@ -156,6 +159,7 @@ def basketball(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+            return HttpResponseRedirect('/team')
     else:
         form = ChoiceForm()
     context = {'form': form}
