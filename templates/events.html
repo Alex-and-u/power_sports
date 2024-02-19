@@ -20,15 +20,26 @@
 
 
     <p class="card-text">
-
+<table class="table table-hover table-striped table-bordered">
             <strong>Address:</strong> {{ events.address }}<br/>
 
             <strong>Time:</strong> {{ events.time }}<br/>
 
             <strong>Date: </strong>{{ events.date }}<br/>
 
-             <strong>Players:</strong> {{ events.no_of_players }} <br/><br/><br/>
+             <strong>Players:</strong> {{ events.no_of_players }} <br/> <button type="button" class="btn btn-danger">Join Event</button> <br/><br/>
 
+            {% if join_link %}
+    <a href="{{ join_link }}">join</a>
+{% endif %}
+{% if leave_link %}
+    <a href="{{ leave_link }}">leave</a>
+{% endif %}
+{% if not join_link and not leave_link %}
+    you can't join
+{% endif %}
+
+</table>
 
             <br/><br/>
 {% endfor %}
