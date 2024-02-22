@@ -27,7 +27,13 @@
 
             <strong>Date: </strong>{{ events.date }}<br/>
 
-             <strong>Players:</strong> {{ events.no_of_players }} <br/> <button type="button" class="btn btn-danger">Join Event</button> <br/><br/>
+             <strong>Players:</strong> {{ events.no_of_players }} <br/> <div class="input-group quantity-selector quantity-selector-sm">
+  <input type="number" id="inputQuantitySelectorSm" class="form-control" aria-live="polite" data-bs-step="counter" name="quantity" title="quantity" value="0" min="0" max="10" step="1" data-bs-round="0" aria-label="Quantity selector">
+  <button type="button" class="btn btn-icon btn-secondary btn-sm" aria-describedby="inputQuantitySelectorSm" data-bs-step="down">
+    <span class="visually-hidden">Join</span>
+  </button>
+
+</div> <br/>
 
             {% if join_link %}
     <a href="{{ join_link }}">join</a>
@@ -36,7 +42,7 @@
     <a href="{{ leave_link }}">leave</a>
 {% endif %}
 {% if not join_link and not leave_link %}
-    you can't join
+    Sorry, you can't join yet, the app is not ready, but you can still play with the select button!
 {% endif %}
 
 </table>
