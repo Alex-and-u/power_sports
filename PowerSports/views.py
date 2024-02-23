@@ -1,14 +1,13 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template import loader
-from .forms import RegisterForm, LoginForm, FieldForm, ChoiceForm
+from .forms import RegisterForm, LoginForm, ChoiceForm
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
 from .forms import JoinEvent
 from .models import Booking
-# from .filters import AddressFilter
 
 
 def home(request):
@@ -42,7 +41,7 @@ def user_login(request):
             msg = 'Invalid credentials'
     else:
         msg = "Invalid user data"
-    return render(request, 'login.html', {'form': form, "msg":msg})
+    return render(request, 'login.html', {'form': form, "msg": msg})
 
 
 class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
@@ -51,7 +50,6 @@ class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
     confirm_template_name = 'reset.html'
     complete_template_name = 'reset_password_complete.html'
     success_url = reverse_lazy('login')
-
 
 
 def user_logout(request):
@@ -65,14 +63,9 @@ def about(request):
     return HttpResponse(html_template.render(context, request))
 
 
-def blog(request):
-    html_template = loader.get_template('blog.html')
-    context = {}
-    return HttpResponse(html_template.render(context, request))
-
-def team(request):
+def join(request):
     form = JoinEvent(request.POST or None)
-    html_template = loader.get_template('team.html')
+    html_template = loader.get_template('join.html')
     if request.method == request.GET:
         if form.is_valid():
             return render(request, 'events.html')
@@ -80,11 +73,6 @@ def team(request):
         form = JoinEvent()
     context = {'form': form}
     return HttpResponse(html_template.render(context, request))
-
-
-# def booking_city(request):
-#     city_filter = BookingFilter(request.GET, queryset=Booking.objects.all())
-#     return render(request, 'team.html', {'filter': city_filter})
 
 
 def events(request):
@@ -100,20 +88,13 @@ def contact(request):
     return HttpResponse(html_template.render(context, request))
 
 
-def news(request):
+def sports(request):
     form = ChoiceForm()
-    html_template = loader.get_template('news.html')
     if request.method == 'POST':
         if form.is_valid():
             form.save()
     context = {'form': form}
-    return render(request, 'news.html',  context)
-
-
-def single_blog(request):
-    html_template = loader.get_template('single-blog.html')
-    context = {}
-    return HttpResponse(html_template.render(context, request))
+    return render(request, 'sports.html', context)
 
 
 def tennis(request):
@@ -122,11 +103,12 @@ def tennis(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/team')
+            return HttpResponseRedirect('/join')
     else:
         form = ChoiceForm()
     context = {'form': form}
     return HttpResponse(html_template.render(context, request))
+
 
 def footbal(request):
     form = ChoiceForm(request.POST or None)
@@ -134,11 +116,12 @@ def footbal(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/team')
+            return HttpResponseRedirect('/join')
     else:
         form = ChoiceForm()
     context = {'form': form}
     return HttpResponse(html_template.render(context, request))
+
 
 def voleyball(request):
     form = ChoiceForm(request.POST or None)
@@ -146,12 +129,13 @@ def voleyball(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/team')
+            return HttpResponseRedirect('/join')
 
     else:
         form = ChoiceForm()
     context = {'form': form}
     return HttpResponse(html_template.render(context, request))
+
 
 def basketball(request):
     form = ChoiceForm(request.POST or None)
@@ -159,15 +143,8 @@ def basketball(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/team')
+            return HttpResponseRedirect('/join')
     else:
         form = ChoiceForm()
     context = {'form': form}
     return HttpResponse(html_template.render(context, request))
-
-
-
-
-
-
-

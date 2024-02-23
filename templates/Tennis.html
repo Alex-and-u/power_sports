@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
     <div class="container min-vh-100 d-flex justify-content-center align-items-center">
     <h2>Create a booking</h2>
-        <br/><br/>
+        <br><br>
     <div class="form-group">
 <form method="POST">
         {% csrf_token %}
@@ -13,14 +13,14 @@
 
     <button type="submit">Create a field</button>
     </form>
-
-
     </div>
-<br/>
+    <br>
+        <br>
+
 <div id='map'></div>
 
 <script>
-	const map = L.map('map').setView([51.5, -0.09], 13);
+	const map = L.map('map').setView([44.4379524,25.9298249,11], 10);
 
 	L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -28,22 +28,35 @@
 
 	const LeafIcon = L.Icon.extend({
 		options: {
-			shadowUrl: 'leaf-shadow.png',
-			iconSize:     [38, 95],
-			shadowSize:   [50, 64],
+			iconSize:     [38, 50],
 			iconAnchor:   [22, 94],
-			shadowAnchor: [4, 62],
 			popupAnchor:  [-3, -76]
 		}
 	});
 
-	const greenIcon = new LeafIcon({iconUrl: '/static/assets/images/tennis.png'});
-	const redIcon = new LeafIcon({iconUrl: '/static/assets/images/tennis.png'});
-	const orangeIcon = new LeafIcon({iconUrl: '/static/assets/images/tennis.png'});
+	const SportIcon = new LeafIcon({iconUrl: '/static/assets/images/tennis.png'});
 
-	const mGreen = L.marker([51.5, -0.09], {icon: greenIcon}).bindPopup('I am a green leaf.').addTo(map);
-	const mRed = L.marker([51.495, -0.083], {icon: redIcon}).bindPopup('I am a red leaf.').addTo(map);
-	const mOrange = L.marker([51.49, -0.1], {icon: orangeIcon}).bindPopup('I am an orange leaf.').addTo(map);
+	const mAddress = L.marker([45.7473344, 21.2287486,17], {icon: SportIcon}).bindPopup('Bulevardul Vasile Pârvan 4, Timișoara, Romania').addTo(map);
+	const mAddress1 = L.marker([45.7493696, 21.2150913], {icon: SportIcon}).bindPopup('Splaiul Tudor Vladimirescu 16A, Timișoara 300173').addTo(map);
+	const mAddress3 = L.marker([45.7730442, 21.2128301,17], {icon: SportIcon}).bindPopup('Calea Torontalului 61, Timișoara, Romania').addTo(map);
+  const mAddress4 = L.marker([45.7768792, 21.2221409,17], {icon: SportIcon}).bindPopup('	Baza Sportivă şi de Agrement „Textila", Strada Martir Dan Carpin 11, Timișoara 300254, Romania').addTo(map);
+	const mAddress5 = L.marker([45.7795427, 21.2112079,17], {icon: SportIcon}).bindPopup('Str. Ion Flueraș 5, Timișoara, Romania').addTo(map);
+	const mAddress6 = L.marker([44.492377, 26.0681782,16], {icon: SportIcon}).bindPopup('Strada Gârlei nr. 1, București 013721, Romania').addTo(map);
+  const mAddress7 = L.marker([44.4787689, 26.0475877,17], {icon: SportIcon}).bindPopup('Strada Băiculești 5, București 013188, Romania').addTo(map);
+	const mAddress8 = L.marker([44.4372755, 26.152641,17], {icon: SportIcon}).bindPopup('	Strada Sergent Șerbănică Vasile, București, Romania').addTo(map);
+	const mAddress9 = L.marker([44.3739655, 26.1193956,17], {icon: SportIcon}).bindPopup('Bulevardul Metalurgiei 23, București 041833, Romania').addTo(map);
+	const mAddress0 = L.marker([44.4565448, 26.171295,17], {icon: SportIcon}).bindPopup('Drumul Dobroești-Fundeni, București 077085, Romania').addTo(map);
+	const mAddress11 = L.marker([47.1573974, 27.6294321,17], {icon: SportIcon}).bindPopup('	Strada Aviației 27, Iași 707252, Romania').addTo(map);
+	const mAddress12 = L.marker([47.1546559, 27.6170781,17], {icon: SportIcon}).bindPopup('	Str. Ciurchi 119A, Iași 707252, Romania').addTo(map);
+	const mAddress13 = L.marker([47.1582432, 27.5991395,17], {icon: SportIcon}).bindPopup('Bulevardul Tudor Vladimirescu, Iași 700259, Romania').addTo(map);
+	const mAddress14 = L.marker([47.1511364, 27.6156888,17], {icon: SportIcon}).bindPopup('	Bulevardul Chimiei 8, Iași 707252, Romania').addTo(map);
+	const mAddress15 = L.marker([47.1512272, 27.535862,12], {icon: SportIcon}).bindPopup('	Strada Principală Holboca, Iași 707250').addTo(map);
+	const mAddress16 = L.marker([45.6470587, 25.6171591,17], {icon: SportIcon}).bindPopup('	Strada Aurelian 2, Brașov 500327, Romania').addTo(map);
+	const mAddress17 = L.marker([45.6555999, 25.5921717,17], {icon: SportIcon}).bindPopup('	Strada Universității 182, Brașov, Romania').addTo(map);
+	const mAddress18 = L.marker([45.6679503, 25.5916559,17], {icon: SportIcon}).bindPopup('Strada Independenței 108, Brașov, Romania').addTo(map);
+	const mAddress19 = L.marker([45.6756381,25.5733798,17], {icon: SportIcon}).bindPopup('	Str. Dihamului 160, Brașov 500483, Romania').addTo(map);
+	const mAddress20 = L.marker([45.695292,25.6253037,17], {icon: SportIcon}).bindPopup('	Strada Sfântul Vasile cel Mare, Sânpetru 507190').addTo(map);
+
 
 </script>
     </div>

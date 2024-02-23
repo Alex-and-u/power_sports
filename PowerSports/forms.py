@@ -1,30 +1,20 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Field, Booking, City, Address
-from django.contrib.admin.widgets import AdminDateWidget
-from django.forms import ModelForm, TextInput, EmailInput
-from django.contrib import messages
-from datetime import datetime, timedelta
+from .models import Field, Booking
+# from django.contrib.admin.widgets import AdminDateWidget
+# from django.forms import ModelForm, TextInput, EmailInput
+# from django.contrib import messages
+# from datetime import datetime, timedelta
 
 
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
-    username = forms.CharField(max_length=50, widget=forms.EmailInput(attrs={'class':'form-control'}))
-
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
+    username = forms.CharField(max_length=50, widget=forms.EmailInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
-
-
-        # def save(self, commit=True):
-        #     user = super(RegisterForm, self).save(commit=False)
-        #     user.email = self.cleaned_data['email']
-        #     if commit:
-        #         user.save()
-        #     return user
-
 
     def __init__(self, *args, **kwargs):
         super(RegisterForm, self).__init__(*args, **kwargs)
@@ -48,8 +38,6 @@ class FieldForm(forms.ModelForm):
     class Meta:
         model = Field
         fields = '__all__'
-
-
 
 
 class ChoiceForm(forms.ModelForm):
@@ -94,5 +82,3 @@ class JoinEvent(ChoiceForm):
         self.fields['city'].widget.attrs['class'] = 'form-control'
         self.fields['date'].widget.attrs['class'] = 'form-control'
         self.fields['time'].widget.attrs['class'] = 'form-control'
-
-

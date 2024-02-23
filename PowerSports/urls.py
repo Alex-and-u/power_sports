@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from PowerSports import views
 from .views import user_login, register
 from django.contrib.auth import views as auth_views
@@ -15,12 +15,10 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('logout/', views.user_logout, name='logout'),
     path('about/', views.about, name='about'),
-    path('blog/', views.blog, name='blog'),
-    path('team/', views.team, name='team'),
+    path('join/', views.join, name='join'),
     path('events/', views.events, name='event_list'),
     path('contact/', views.contact, name='contact'),
-    path('news/', views.news, name='news'),
-    path('single_blog/', views.single_blog, name='single_blog'),
+    path('sports/', views.sports, name='sports'),
     path('Tennis/', views.tennis, name='Tennis'),
     path('Football/', views.footbal, name='Football'),
     path('Voleyball/', views.voleyball, name='Voleyball'),

@@ -3,7 +3,6 @@
       <!-- END LOADER -->
     {% if user.is_authenticated %}
       <p class="h4">Hi {{ user.username }}!</p>
-
       <div class="matchs-info">
          <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="row">
@@ -207,4 +206,5 @@
         <p>You are not logged in!</p>
         <a href="{% url 'login' %}">Log In</a>
     {% endif %}
+    </div>
 {% endblock %}

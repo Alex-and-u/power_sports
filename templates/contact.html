@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
+   {% if user.is_authenticated %}
+      <p class="h4">Hi {{ user.username }}!</p>
       <section id="top">
          <div class="inner-information-text">
             <div class="container">
@@ -55,4 +57,8 @@
             </div>
          </div>
       </section>
+      {% else %}
+        <p>You are not logged in!</p>
+        <a href="{% url 'login' %}">Log In</a>
+      {% endif %}
 {% endblock %}
